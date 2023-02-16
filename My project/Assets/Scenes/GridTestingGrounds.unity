@@ -154,7 +154,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _width: 16
   _height: 9
-  _tilePrefab: {fileID: 1280632677603492383, guid: 202d218c821c18641b56c53ecc3fcde0, type: 3}
+  _GrassTile: {fileID: 4345050728336198163, guid: 1b8001b4af1b1bc4b9d786d9bd57450f, type: 3}
+  _MountainTile: {fileID: -1413285949496548451, guid: e89d277b787f0fe488312061846bda37, type: 3}
   _cam: {fileID: 1557233085}
 --- !u!4 &675301282
 Transform:
