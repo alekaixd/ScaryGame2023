@@ -28,10 +28,10 @@ public class GameManager : MonoBehaviour
                 AlekainGridScript.Instance.GenerateGrid();
                 break;
             case GameState.SpawnHeroes:
-                UnitManager.Instance.SpawnHeroes();
+           //   UnitManager.Instance.SpawnHeroes();
                 break;
             case GameState.SpawnEnemies:
-                UnitManager.Instance.SpawnEnemies();
+            //  UnitManager.Instance.SpawnEnemies();
                 break;
             case GameState.HeroesTurn:
                 break;
