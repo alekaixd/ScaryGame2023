@@ -10,17 +10,17 @@ public class AlekainGridScript : MonoBehaviour
 {
     public static AlekainGridScript Instance;
 
-    [SerializeField] private int _width, _height;
+    [SerializeField] private int _width, _height; //Kuvasuhde
 
-    [SerializeField] private AlekainTileScript _GrassTile, _MountainTile;
+    [SerializeField] private AlekainTileScript _GrassTile, _MountainTile; //Kaksi eri tile tyyppiä. Nimet vähän harhaanjohtavia seinä ja lattia tile voisi ehkä olla parempi, mut en jaksa lähtee muuttaa
 
-    [SerializeField] private Transform _cam;
+    [SerializeField] private Transform _cam; //kameran paikka
 
     private Dictionary<Vector2, AlekainTileScript> _tiles;
 
     void Start()
     {
-        GenerateGrid();
+        GenerateGrid(); //aika selkeä
     }
 
     public void GenerateGrid() //Käyttää kahta for looppia luodakseen gridin (kaksi koska x ja y)
@@ -44,20 +44,20 @@ public class AlekainGridScript : MonoBehaviour
             }
         }
 
-        _cam.transform.position = new Vector3((float)_width / 2 - 0.5f, (float)_height / 2 - 0.5f, -10); 
+        _cam.transform.position = new Vector3((float)_width / 2 - 0.5f, (float)_height / 2 - 0.5f, -10); //Kameran positio
 
-        GameManager.Instance.ChangeState(GameState.SpawnHeroes); 
+        GameManager.Instance.ChangeState(GameState.SpawnHeroes); //gamesteitti muuttuu seuraavaan
 
 
     }
 
-    public AlekainTileScript GetHeroSpawnTile () //Pelaajan spawni
+    public AlekainTileScript GetHeroSpawnTile () //Pelaajan spawni, käytännössä idea on se että vihollinen ja pelaaja spawnaavat random paikkoihin eripuolilla kenttää
     {
         return _tiles.Where(t => t.Key.x < _width / 2 && t.Value.Walkable).OrderBy(t => Random.value).First().Value; 
 
     }
 
-    public AlekainTileScript GetEnemySpawnTile() //Vihollisen spawni
+    public AlekainTileScript GetEnemySpawnTile() //Vihollisen spawni (vihollista ei tällä hetkellä vielä ole, joten tästä ei tarvitse välittää
     {
         return _tiles.Where(t => t.Key.x > _width / 2 && t.Value.Walkable).OrderBy(t => Random.value).First().Value;
     }

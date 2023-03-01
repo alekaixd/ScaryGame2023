@@ -5,9 +5,9 @@ using UnityEngine;
 public abstract class AlekainTileScript : MonoBehaviour
 {
 
-    [SerializeField] protected SpriteRenderer _renderer; 
-    [SerializeField] private GameObject _highlight;
-    [SerializeField] private bool _isWalkable;
+    [SerializeField] protected SpriteRenderer _renderer; //aika selke‰
+    [SerializeField] private GameObject _highlight; //higlihgtaa tilen
+    [SerializeField] private bool _isWalkable; //Onko tile k‰velt‰v‰ (grasstile on k‰velt‰v‰)
 
     public BaseUnit OccupiedUnit; 
     public bool Walkable => _isWalkable && OccupiedUnit == null;  //Metodi joka katsoo onko onko tile tyhj‰ ja onko se k‰velt‰viss‰ oleva tile (ei sein‰ tai jne)
@@ -18,12 +18,12 @@ public abstract class AlekainTileScript : MonoBehaviour
 
     }
 
-    void OnMouseEnter()
+    void OnMouseEnter() //jos hiiri on tilen p‰‰ll‰ niin tile on highlightattu ja on v‰h‰n vaaleampi
     {
         _highlight.SetActive(true);
     }
 
-    void OnMouseExit()
+    void OnMouseExit() //highlight tila poistuu kun hiiri poistuu tilen p‰‰lt‰
     {
         _highlight.SetActive(false);
     }

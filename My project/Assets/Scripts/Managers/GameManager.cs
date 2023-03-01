@@ -18,10 +18,10 @@ public class GameManager : MonoBehaviour
         ChangeState(GameState.GenerateGrid);
     }
 
-    public void ChangeState(GameState newState)
+    public void ChangeState(GameState newState)  //Kasa "Gamesteittejä".Tällä hetkellä ainoastaan generate grid ja spawnheroes on käytössä 
     {
         GameState = newState;
-        switch (newState)
+        switch (newState) 
             
         {
             case GameState.GenerateGrid:

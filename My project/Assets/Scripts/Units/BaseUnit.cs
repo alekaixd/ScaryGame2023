@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BaseUnit : MonoBehaviour
 {
-    public string UnitName;
-    public AlekainTileScript OccupiedTile;
-    public Faction Faction;
+    public string UnitName; //aika selkeä
+    public AlekainTileScript OccupiedTile; //onko tile jo käytössä
+    public Faction Faction; //faktioni
 }
