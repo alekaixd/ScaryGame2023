@@ -1,6 +1,8 @@
-using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
+using System.Collections;
+using UnityEditor;
 
 public class UnitManager : MonoBehaviour
 {
@@ -28,10 +30,7 @@ public class UnitManager : MonoBehaviour
             var spawnedHero = Instantiate(randomPrefab);
             var randomSpawnTile = AlekainGridScript.Instance.GetHeroSpawnTile();
 
-            spawnedHero.transform.position = randomSpawnTile.transform.position;
-            randomSpawnTile.OccupiedTile = spawnedHero;
-
-            //randomSpawnTile.SetUnit(spawnedHero);
+            randomSpawnTile.SetUnit(spawnedHero); //pelaajan spawnaus
         }
 
         GameManager.Instance.ChangeState(GameState.SpawnEnemies);
