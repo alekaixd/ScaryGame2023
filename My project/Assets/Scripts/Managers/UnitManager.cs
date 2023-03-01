@@ -1,22 +1,23 @@
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using UnityEngine;
-using System.Collections;
 using UnityEditor;
+using UnityEngine;
+
 
 public class UnitManager : MonoBehaviour
 {
 
     public static UnitManager Instance;
 
-    private List<ScriptableUnit> _units;
-    public BaseHero SelectedHero;
+    private List<ScriptableUnits> _units;
+    public baseHero SelectedHero;
 
     void Awake()
     {
         Instance = this;
 
-        _units = Resources.LoadAll<ScriptableUnit>("Units").ToList();
+        _units = Resources.LoadAll<ScriptableUnits>("Units").ToList();
 
     }
 
@@ -26,7 +27,7 @@ public class UnitManager : MonoBehaviour
 
         for (int i = 0; i < heroCount; i++)
         {
-            var randomPrefab = GetRandomUnit<BaseHero>(Faction.Hero);
+            var randomPrefab = GetRandomUnit<baseHero>(Faction.Hero);
             var spawnedHero = Instantiate(randomPrefab);
             var randomSpawnTile = AlekainGridScript.Instance.GetHeroSpawnTile();
 
@@ -40,4 +41,4 @@ public class UnitManager : MonoBehaviour
     {
         return (T)_units.Where(u => u.Faction == faction).OrderBy(o => Random.value).First().UnitPrefab;
     }
-    
+}

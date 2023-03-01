@@ -79,10 +79,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7fcf7bd726c1c8e45a20197239376c2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _baseColor: {r: 0.4595912, g: 0.7735849, b: 0.18536842, a: 1}
-  _offsetColor: {r: 0.14951937, g: 0.7075472, b: 0.14951937, a: 1}
   _renderer: {fileID: 6946938548667349129}
   _highlight: {fileID: 7150068616413811698}
+  _isWalkable: 1
+  OccupiedUnit: {fileID: 0}
+  _baseColor: {r: 0.4595912, g: 0.7735849, b: 0.18536842, a: 1}
+  _offsetColor: {r: 0.14951937, g: 0.7075472, b: 0.14951937, a: 1}
 --- !u!1 &7150068616413811698 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1339793302712166757, guid: 202d218c821c18641b56c53ecc3fcde0, type: 3}

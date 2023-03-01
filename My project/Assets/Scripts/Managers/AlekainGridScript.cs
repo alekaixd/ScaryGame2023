@@ -23,7 +23,7 @@ public class AlekainGridScript : MonoBehaviour
         GenerateGrid();
     }
 
-    public void GenerateGrid()
+    public void GenerateGrid() //K‰ytt‰‰ kahta for looppia luodakseen gridin (kaksi koska x ja y)
     {
         _tiles = new Dictionary<Vector2, AlekainTileScript>();
         for (int x = 0; x < _width; x++)
@@ -44,20 +44,20 @@ public class AlekainGridScript : MonoBehaviour
             }
         }
 
-        _cam.transform.position = new Vector3((float)_width / 2 - 0.5f, (float)_height / 2 - 0.5f, -10);
+        _cam.transform.position = new Vector3((float)_width / 2 - 0.5f, (float)_height / 2 - 0.5f, -10); 
 
-        GameManager.Instance.ChangeState(GameState.SpawnHeroes);
+        GameManager.Instance.ChangeState(GameState.SpawnHeroes); 
 
 
     }
 
-    public Tile GetHeroSpawnTile () //Pelaajan spawni
+    public AlekainTileScript GetHeroSpawnTile () //Pelaajan spawni
     {
         return _tiles.Where(t => t.Key.x < _width / 2 && t.Value.Walkable).OrderBy(t => Random.value).First().Value; 
 
     }
 
-    public Tile GetEnemySpawnTile() //Vihollisen spawni
+    public AlekainTileScript GetEnemySpawnTile() //Vihollisen spawni
     {
         return _tiles.Where(t => t.Key.x > _width / 2 && t.Value.Walkable).OrderBy(t => Random.value).First().Value;
     }
