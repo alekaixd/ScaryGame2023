@@ -7,6 +7,11 @@ public abstract class AlekainTileScript : MonoBehaviour
 
     [SerializeField] protected SpriteRenderer _renderer;
     [SerializeField] private GameObject _highlight;
+    [SerializeField] private bool _isWalkable;
+
+    public BaseUnit OccupiedUnit;
+    public bool Walkable => _isWalkable && OccupiedUnit == null;
+
 
     public virtual void Init(int x, int y)
     {

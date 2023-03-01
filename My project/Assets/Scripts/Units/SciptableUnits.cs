@@ -2,17 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SciptableUnits : MonoBehaviour
+[CreateAssetMenu(fileName = "New Unit", menuName = "Scriptable Unit")]
+public class ScriptableUnits : ScriptableObject
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public Faction Faction;
+    public BaseUnit UnitPrefab;
+}
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+public enum Faction
+{
+    Hero = 0,
+    Enemy = 1
 }
