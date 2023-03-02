@@ -98,4 +98,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   UnitName: 
+  OccupiedTile: {fileID: 0}
   Faction: 0

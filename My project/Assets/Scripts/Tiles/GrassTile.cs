@@ -9,7 +9,7 @@ public class GrassTile : AlekainTileScript
 
     public override void Init(int x, int y)  //jokatoinen ruoho tile on v‰h‰n eriv‰rinen (se n‰ytt‰‰ paremmalta)
     {
-        var isOffset = (x + y) % 2 == 1;
-        _renderer.color = isOffset ? _offsetColor : _baseColor;
+        var isOffset = (x + y) % 2 == 1; //tekee lattia tileille sen hienon shakkilautamaisuuden
+        _renderer.color = isOffset ? _offsetColor : _baseColor; //T‰m‰ nyt muuttaa se  siihe  shakkilautaan
     }
 }

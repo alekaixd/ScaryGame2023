@@ -26,11 +26,11 @@ public class AlekainGridScript : MonoBehaviour
     public void GenerateGrid() //K‰ytt‰‰ kahta for looppia luodakseen gridin (kaksi koska x ja y)
     {
         _tiles = new Dictionary<Vector2, AlekainTileScript>();
-        for (int x = 0; x < _width; x++)
+        for (int x = 0; x < _width; x++) //Pituus yleisesti 16
         {
-            for (int y = 0; y < _height; y++)
+            for (int y = 0; y < _height; y++)  //leveys yleisesti 9
             {
-                var randomTile = Random.Range(0, 6) == 3 ? _MountainTile : _GrassTile;
+                var randomTile = Random.Range(0, 6) == 3 ? _MountainTile : _GrassTile; //Arpoo mitk‰ tilet ovat seini‰ ja mitk‰ lattiaa
 
                 var spawnedTile = Instantiate(randomTile, new Vector3(x, y), Quaternion.identity);
                 spawnedTile.name = $"Tile {x} {y}";
