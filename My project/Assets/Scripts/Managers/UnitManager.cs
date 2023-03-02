@@ -37,7 +37,7 @@ public class UnitManager : MonoBehaviour
         GameManager.Instance.ChangeState(GameState.SpawnEnemies); //siirtyy seuraavaan gamestateen (jota ei vielä ole koodattu loppuun)
     }
 
-     private T GetRandomUnit<T>(Faction faction) where T : BaseUnit 
+     private T GetRandomUnit<T>(Faction faction) where T : BaseUnit //valitsee random prefabin
      {
          return (T)_units.Where(u => u.Faction == faction).OrderBy(o => Random.value).First().UnitPrefab;
      }
