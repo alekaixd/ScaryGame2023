@@ -32,6 +32,7 @@ public class UnitManager : MonoBehaviour
             var randomPrefab = GetRandomUnit<baseHero>(Faction.Hero); //hakee pelaajan prefabin
             Debug.Log("Ensimmäinen rivi");
             var spawnedHero = Instantiate(randomPrefab); //palauttaa prefabin
+            Debug.Log("Ollaan rivill' 35");
             var randomSpawnTile = AlekainGridScript.Instance.GetHeroSpawnTile(); //Hakee tilen mihin spawnata
 
             randomSpawnTile.SetUnit(spawnedHero); //pelaajan spawnaus
@@ -43,7 +44,9 @@ public class UnitManager : MonoBehaviour
      private T GetRandomUnit<T>(Faction faction) where T : BaseUnit //valitsee random prefabin
      {
         Debug.Log("T toimii");
+        //1
         Debug.Log(_units);
+        Debug.Log("(:");
         return (T)_units.Where(u => u.Faction == faction).OrderBy(o => Random.value).First().UnitPrefab;
 
         
