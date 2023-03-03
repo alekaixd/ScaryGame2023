@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
     void Awake()
     {
         Instance = this;
+        Debug.Log("Alku");
     }
 
     void Start()
@@ -28,7 +29,9 @@ public class GameManager : MonoBehaviour
                 AlekainGridScript.Instance.GenerateGrid();
                 break;
             case GameState.SpawnHeroes:
+                Debug.Log("Spawnheroes alkaa");
                 UnitManager.Instance.SpawnHeroes();
+                Debug.Log("Spawnheroes toimii");
                 break;
             case GameState.SpawnEnemies:
                 //UnitManager.Instance.SpawnEnemies(); 
