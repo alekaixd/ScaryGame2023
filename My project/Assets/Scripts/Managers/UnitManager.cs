@@ -30,7 +30,7 @@ public class UnitManager : MonoBehaviour
         {
             Debug.Log("For looppu alkaa");
             var randomPrefab = GetRandomUnit<baseHero>(Faction.Hero); //hakee pelaajan prefabin
-            Debug.Log("Ensimmäinen rivi");
+            Debug.Log("randPrefab: " + randomPrefab);
             var spawnedHero = Instantiate(randomPrefab); //palauttaa prefabin
             Debug.Log("Ollaan rivill' 35");
             var randomSpawnTile = AlekainGridScript.Instance.GetHeroSpawnTile(); //Hakee tilen mihin spawnata
@@ -47,8 +47,8 @@ public class UnitManager : MonoBehaviour
         //1
         Debug.Log(_units);
         Debug.Log("(:");
-        return (T)_units.Where(u => u.Faction == faction).OrderBy(o => Random.value).First().UnitPrefab;
-
+        return (T)_units.Where(u => u.Faction == faction).OrderBy(o => Random.value).FirstOrDefault().UnitPrefab;
+        
         
 
      }

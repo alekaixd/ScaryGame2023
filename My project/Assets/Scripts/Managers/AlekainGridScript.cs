@@ -56,6 +56,7 @@ public class AlekainGridScript : MonoBehaviour
 
     public AlekainTileScript GetHeroSpawnTile () //Pelaajan spawni, käytännössä idea on se että vihollinen ja pelaaja spawnaavat random paikkoihin eripuolilla kenttää
     {
+        Debug.Log("Trying to get spawnpoint for the hero");
         return _tiles.Where(t => t.Key.x < _width / 2 && t.Value.Walkable).OrderBy(t => Random.value).First().Value; 
 
     }
